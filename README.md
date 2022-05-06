@@ -19,11 +19,16 @@ Before you begin, ensure you have met the following requirements:
 1. go to /Short\_Em\_All: python3 short\_em\_all.py
 ## Options
 * Dictionary options:
+
   [-] Yes: use the stable\_dict.txt (Short\_Em\_All\Input)
   [-] No: insert keyword to run a scan based on single-target
+		
 * Screenshot options:
+
   [-] Yes: URLs with HTTP Status Code = 200 are screenshotted and saved into /Screenshot
   [-] No: no screenshot taken during the scan process
+		
 * Results options:
+
   [-] Yes: only URLs with HTTP Status Code = 200 are printed on-screen
   [-] No: all results are printed on-screen
