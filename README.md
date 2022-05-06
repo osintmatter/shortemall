@@ -25,11 +25,15 @@ Before you begin, ensure you have met the following requirements:
 usage: short_em_all.py [-h] [-t TARGET] [-s [SCREENSHOT]] [-v [VERBOSE]]
 
 optional arguments:
+
   -h, --help            show this help message and exit
+  
   -t TARGET, --target TARGET
                         insert target keyword
+			
   -s [SCREENSHOT], --screenshot [SCREENSHOT]
                         Take screenshots on found results
+			
   -v [VERBOSE], --verbose [VERBOSE]
                         turn on verbose mode
 
