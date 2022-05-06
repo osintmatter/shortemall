@@ -17,18 +17,21 @@ Before you begin, ensure you have met the following requirements:
 1. go to: https://chromedriver.chromium.org/downloads, download the driver version of your locally installed chrome - browser version. Then put it into /Driver folder.
 1. go to /input folder and populate stable\_dict.txt with one word per line -- these will be the words that will be permutated and appended to the generated custom URLs
 1. go to /Short\_Em\_All: python3 short\_em\_all.py
-## Options
+## Run Options
 * Dictionary options:
 
   [-] Yes: use the stable\_dict.txt (Short\_Em\_All\Input)
+  
   [-] No: insert keyword to run a scan based on single-target
 		
 * Screenshot options:
 
   [-] Yes: URLs with HTTP Status Code = 200 are screenshotted and saved into /Screenshot
+  
   [-] No: no screenshot taken during the scan process
 		
 * Results options:
 
   [-] Yes: only URLs with HTTP Status Code = 200 are printed on-screen
+  
   [-] No: all results are printed on-screen
