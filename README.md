@@ -64,7 +64,7 @@ Then, you con manually configure some scan options:
   
   [-] No: no screenshot taken during the scan process
 		
-* Results options:
+* ![image](https://user-images.githubusercontent.com/104920726/167406234-25d4bd43-1167-4747-af81-c865448d17f1.png):
 
   [-] Yes: only URLs with HTTP Status Code = 200 are printed on-screen
   
