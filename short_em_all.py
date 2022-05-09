@@ -306,7 +306,7 @@ if screenshot_options == "y":
             options.add_argument("--headless")
             options.add_experimental_option("excludeSwitches", ["enable-automation"])
             options.add_experimental_option("useAutomationExtension", False)
-            s = Service("/media/sf_Check_Phone/Short_Em_All/Drivers/chromedriver")
+            s = Service(config.get("path", "service"))
             driver = webdriver.Chrome(
                 service=s,
                 options=options,
