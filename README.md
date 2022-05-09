@@ -16,7 +16,7 @@ Before you begin, ensure you have met the following requirements:
 1. Run config.py to automatically generate path variables
 1. Open terminal on /shortemall/ and run: pip install -r requirements.txt
 1. Go to: https://chromedriver.chromium.org/downloads, download the driver version of your locally installed chrome - browser version. 
-2. Insert the chrome driver file path into the config.ini file on Drivers:" " line.
+2. Insert the chrome driver file path into the config.ini file on Drivers = " " and Service = "" lines.
 3. Go to /input folder and populate stable\_dict.txt with one word per line -- these will be the words that will be permutated and appended to the generated custom URLs
 4. Go to /Short\_Em\_All, and on terminal run: python3 short\_em\_all.py
 
