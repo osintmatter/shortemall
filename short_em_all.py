@@ -106,7 +106,7 @@ while True and args.screenshot is None:
 
 if args.verbose is not None:
     onlygreen = "null"
-    while True and args.verbose is None:
+while True and args.verbose is None:
         onlygreen = input(
             colored(
                 "[*] Do you want to print only existing URLs? (y: Yes, n: No)", "green"
