@@ -10,6 +10,7 @@ Before you begin, ensure you have met the following requirements:
 
 * You have installed Python - pip (at least v. 3.8) 
 * You run the tool on Linux machine
+* Google Chrome installed (only for screenshots feature)
 
 ## Installing
 1. Run config.py to automatically generate path variables
@@ -71,6 +72,9 @@ Then, you con manually configure some scan options:
   [-] No: all results are printed on-screen
   
   ![image](https://user-images.githubusercontent.com/104920726/167405542-998f2984-cc4a-4b69-98af-57e73d8f5e48.png)
+
+## Notes
+Due to presence of false postivies on found URLs, I strongly suggest to enable the screenshots option. This way you can visually filter the results once the scan is terminated. 
 
 ## Acknowledgements
 
