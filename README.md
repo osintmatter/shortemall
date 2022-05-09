@@ -67,3 +67,6 @@ Then, you con manually configure some scan options:
 ## Acknowledgements
 
 The URL verification method implemented in *Short 'Em All!* uses https://seintpl.github.io/osint/short-links-verification-cheatsheet as its dynamic source generation.     
+## Contact Info
+
+for any question or further information write to me at: osintmatter@protonmail.com
