@@ -340,10 +340,12 @@ new_backup = open(config.get("path", "backup"), "wb").write(
     page.content
 )  # download last available version of url HTML to ensure continuity
 
-print(colored("See taken Screenshots on /Screenshots Folder", "yellow"))
+if screenshot_options == "y":
+
+    print(colored("See taken Screenshots on /Screenshots Folder", "yellow"))
 
 with open(config.get("path", "outfile")) as f:
 
     closing = sum(1 for _ in f), "new results found!"
 print(colored(closing, "yellow"))
-input(colored("Press any key to end...", "yellow"))
+input(colored("Press Enter key to end...", "yellow"))
