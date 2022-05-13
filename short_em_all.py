@@ -224,7 +224,7 @@ if __name__ == "__main__":
     df = pd.DataFrame(Dict)
     del df["Example"]
 
-    df1 = df["Service"].str.strip("\n" "(deprecated)").str.replace(" ", "")
+    df1 = df["Service"].str.strip("\n").str.strip(" ")
     df2 = df["Verification method"].str.extract("([+-@=!])")
 
     df1_l = df1.values.tolist()
