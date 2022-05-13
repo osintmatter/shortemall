@@ -29,6 +29,9 @@ Before you begin, ensure you have met the following requirements:
 3. Go to /input folder and populate stable\_dict.txt with one word per line -- these will be the words that will be permutated and appended to the generated custom URLs
 4. Go to /Short\_Em\_All, and on terminal run: python3 short\_em\_all.py
 
+## Stable_dict.txt
+On /Input folder you will find stable_dict.txt. This is your living dictionary, you can manually edit the .txt file with keyword list (one per line). The stable_dict can be your baseline for scheduled jobs or ricursive scans. 
+
 ## CLI Options
 
 usage: short_em_all.py [-h] [-t TARGET] [-s [SCREENSHOT]] [-v [VERBOSE]]
