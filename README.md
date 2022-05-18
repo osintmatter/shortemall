@@ -101,7 +101,13 @@ Due to presence of false postivies on found URLs, I strongly suggest to enable t
 
 ## Acknowledgements
 
-The URL verification method implemented in *Short 'Em All!* uses https://seintpl.github.io/osint/short-links-verification-cheatsheet as its dynamic source generation.     
+The URL verification method implemented in *Short 'Em All!* uses https://seintpl.github.io/osint/short-links-verification-cheatsheet as its dynamic source generation. 
+
+## Disclaimer 
+
+*Short'em All!* avoids generating unwanted direct traffic to "Short Urls Providers" by using only a preview mode for each individual URL generated. In any case, limited and conscious use of scans is recommended.
+The tool is intended for educational and research purposes. 
+
 ## Contact Info
 
 for any question or further information write to me at: osintmatter@protonmail.com
