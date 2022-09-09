@@ -21,6 +21,8 @@ Short' Em All!, finally, allows you to get a .txt report with active urls for si
 3. Automatic screenshot of landing pages without Chrmodriver 
 4. Google Developers functions fully implemented with minimal manual requirement for configuration 
 
+Video tutorial on V2.0 features here: https://twitter.com/MatterOsint/status/1567455974717276165 
+
 ## Prerequisites
 Before you begin, ensure you have met the following requirements:
 
