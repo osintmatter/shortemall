@@ -1,6 +1,6 @@
 google_api_python_client==2.58.0
 google_auth_oauthlib==0.5.2
-lxml==4.5.0
+lxml==4.9.1
 pandas==1.4.0
 progressbar33==2.4
 requests==2.22.0
