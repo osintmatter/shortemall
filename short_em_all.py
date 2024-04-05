@@ -72,15 +72,13 @@ if not os.path.isfile('config.ini'):
     print("'config.ini' file not found!")
     os.system('python config.py')
 
-# Check if the 'gmail.pickle' file exists in the current directory
 if not os.path.isfile('gmail.pickle'):
     exclude_gmail = get_input("'gmail.pickle' file not found. Do you want to exclude this configuration? (y/n): ")
     if exclude_gmail == 'y':
         print("Excluding 'gmail.pickle' configuration...")
     else:
         print("Obtain the OAuth 2.0 client ID for your Gmail account and save the generated credentials file as credentials.json in the main folder - follow this step-by-step guide: https://support.google.com/cloud/answer/6158849?hl=en#zippy=")
-        
-
+        os.system('python gmailconfig.py')
 # If both files exist, proceed with the script
 if os.path.isfile('config.ini') and os.path.isfile('gmail.pickle'):
     pass
@@ -208,8 +206,9 @@ if args.zero:
 if args.screenshot:
     screenshot_options = "y"
 
+
 # Ask the user if they want to take screenshots for found URLs
-if not args.screenshot and not args.zero:
+if not args.screenshot and not args.zero and exclude_gmail != 'n':
     while True:
         screenshot_options = input(
             colored(
