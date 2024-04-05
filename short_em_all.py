@@ -97,7 +97,6 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 settingscfg = config["path"]
 dictionary_options = "zzzz"
-#screenshot_options = "zzzz"
 singlescan = "zzzz"
 outfile_path = config.get("path", "outfile")
 tempfile_path = config.get("path", "tempfile")
