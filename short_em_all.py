@@ -72,20 +72,24 @@ if not os.path.isfile('config.ini'):
     print("'config.ini' file not found!")
     os.system('python config.py')
 
+screenshot_options = ''  # Setting screenshot_options to 'error' outside the loop
+
 if not os.path.isfile('gmail.pickle'):
     exclude_gmail = get_input("'gmail.pickle' file not found. Do you want to exclude this configuration? (y/n): ")
     if exclude_gmail == 'y':
         print("Excluding 'gmail.pickle' configuration...")
-    else:
+        screenshot_options = 'error'  # Set screenshot_options to 'error' if exclude_gmail is 'y'
+    elif exclude_gmail == 'n':
         print("Obtain the OAuth 2.0 client ID for your Gmail account and save the generated credentials file as credentials.json in the main folder - follow this step-by-step guide: https://support.google.com/cloud/answer/6158849?hl=en#zippy=")
         os.system('python gmailconfig.py')
+
 # If both files exist, proceed with the script
 if os.path.isfile('config.ini') and os.path.isfile('gmail.pickle'):
     pass
 # Insert the rest of the script code here
 else:
     print("Error: Configuration files not found. Exiting...")
-    
+
 # Config Parameters
 now = datetime.now()
 onlygreen = "zzzz"
@@ -93,12 +97,13 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 settingscfg = config["path"]
 dictionary_options = "zzzz"
-screenshot_options = "zzzz"
+#screenshot_options = "zzzz"
 singlescan = "zzzz"
 outfile_path = config.get("path", "outfile")
 tempfile_path = config.get("path", "tempfile")
 api_key = config.get("variables", "api_key")
 seen_urls = set()
+
 # Initialize ArgumentParser
 parser = argparse.ArgumentParser(description="URL Shortener Scanner Tool")
 parser.add_argument(
@@ -153,7 +158,7 @@ parser.add_argument(
 args = parser.parse_args()
 
 # Set default values
-dictionary_options = screenshot_options = onlygreen = send_mail = singlescan = "null"
+dictionary_options = onlygreen = send_mail = singlescan = "null"
 
 # Check if args.target is provided
 if args.target:
@@ -206,9 +211,8 @@ if args.zero:
 if args.screenshot:
     screenshot_options = "y"
 
-
 # Ask the user if they want to take screenshots for found URLs
-if not args.screenshot and not args.zero and exclude_gmail != 'n':
+if not args.screenshot and not args.zero and screenshot_options != 'error':
     while True:
         screenshot_options = input(
             colored(
@@ -222,6 +226,7 @@ if not args.screenshot and not args.zero and exclude_gmail != 'n':
             break
         else:
             print(colored("Error, y: Yes, n: No", "red"))
+
 
 # Set onlygreen based on args.verbose and args.found
 if args.verbose:
