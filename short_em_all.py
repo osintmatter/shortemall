@@ -78,8 +78,8 @@ if not os.path.isfile('gmail.pickle'):
     if exclude_gmail == 'y':
         print("Excluding 'gmail.pickle' configuration...")
     else:
-        print("Returning to 'gmail.pickle'...")
-        os.system('python gmail_config.py')
+        print("Obtain the OAuth 2.0 client ID for your Gmail account and save the generated credentials file as credentials.json in the main folder - follow this step-by-step guide: https://support.google.com/cloud/answer/6158849?hl=en#zippy=")
+        
 
 # If both files exist, proceed with the script
 if os.path.isfile('config.ini') and os.path.isfile('gmail.pickle'):
