@@ -39,23 +39,21 @@ import lxml.html as lh
 from googleapiclient.discovery import build
 
 
-# Funzione per stampare un banner ASCII art senza sfasamenti
-def print_ascii_banner(ascii_art):
-    # Larghezza massima della riga del terminale
-    terminal_width = 80
-    
-    # Dividi il testo dell'ASCII art in righe separate
-    lines = ascii_art.strip().split('\n')
-    
-    # Avvolgi ciascuna riga in modo che non superi la larghezza massima del terminale
-    wrapped_lines = [textwrap.fill(line, width=terminal_width) for line in lines]
+# ASCII Art Banner
+def banner():
+    print(""" 
+   _____ _                _     _ ______                      _ _   _ 
+  / ____| |              | |   ( )  ____|               /\   | | | | |
+ | (___ | |__   ___  _ __| |_  |/| |__   _ __ ___      /  \  | | | | |
+  \___ \| '_ \ / _ \| '__| __|   |  __| | '_ ` _ \    / /\ \ | | | | |
+  ____) | | | | (_) | |  | |_    | |____| | | | | |  / ____ \| | | |_|
+ |_____/|_| |_|\___/|_|   \__|   |______|_| |_| |_| /_/    \_\_|_| (_)
+                                                                    
+  by  OSINTMATTER                                                      
+                                                                     v3.0_2024        
+ 
 
-    # Trova la lunghezza massima tra tutte le righe
-    max_length = max(len(line) for line in wrapped_lines)
-
-    # Stampa ciascuna riga separatamente, aggiungendo spazi bianchi per allineare le righe più corte
-    for line in wrapped_lines:
-        print(line.ljust(max_length))
+Designed by  OSINTMATTER """)
 
 
 
@@ -86,10 +84,11 @@ if not os.path.isfile('gmail.pickle'):
 # If both files exist, proceed with the script
 if os.path.isfile('config.ini') and os.path.isfile('gmail.pickle'):
     pass
-    # Insert the rest of the script code here
+# Insert the rest of the script code here
 else:
     print("Error: Configuration files not found. Exiting...")
-# COnfig Parameters
+    
+# Config Parameters
 now = datetime.now()
 onlygreen = "zzzz"
 config = configparser.ConfigParser()
@@ -102,31 +101,6 @@ outfile_path = config.get("path", "outfile")
 tempfile_path = config.get("path", "tempfile")
 api_key = config.get("variables", "api_key")
 seen_urls = set()
-
-import textwrap
-
-# Definisci l'ASCII art
-ascii_banner = """ 
-
-
-   _____ _                _     _ ______                      _ _   _ 
-  / ____| |              | |   ( )  ____|               /\   | | | | |
- | (___ | |__   ___  _ __| |_  |/| |__   _ __ ___      /  \  | | | | |
-  \___ \| '_ \ / _ \| '__| __|   |  __| | '_ ` _ \    / /\ \ | | | | |
-  ____) | | | | (_) | |  | |_    | |____| | | | | |  / ____ \| | | |_|
- |_____/|_| |_|\___/|_|   \__|   |______|_| |_| |_| /_/    \_\_|_| (_)
-                                                                    
-  by  OSINTMATTER                                                      
-                                                                     v3.0_2024        
- 
-
-Designed by  OSINTMATTER  v3.0_2024 """
-
-print_ascii_banner(ascii_banner)
-# usage recap banner
-
-import argparse
-
 # Initialize ArgumentParser
 parser = argparse.ArgumentParser(description="URL Shortener Scanner Tool")
 parser.add_argument(
@@ -193,6 +167,7 @@ if args.target:
 else:
     print(colored("UI config options:", "yellow"))
 
+banner()
 # Ask the user if they want to use the dict.txt file to generate URLs
 if not args.target and not args.dictionary:
     while True:
@@ -319,8 +294,8 @@ if send_mail is None:
         else:
             print(colored("Error, y: Yes, n: No", "red"))
 
-# Ask the user if they want to filter the results for Bitly
-is_bitly_url_input = input("Do you want to filter the results for Bitly? (y/n): ").lower()
+# Ask the user if they want to filter the results for Bit.ly
+is_bitly_url_input = input("Do you want to filter the results for Bit.ly URLs? (y/n): ").lower()
 
 # Validate the user's input
 while is_bitly_url_input not in {'y', 'n'}:
@@ -339,7 +314,7 @@ def animated_marker():
         time.sleep(0.1)
         bar.update(i)
 
-# Definizione di funzioni
+# Definition of permutation logic
 def find_occurrences(s, ch):
     return [i for i, letter in enumerate(s) if letter == ch]
 
@@ -355,31 +330,29 @@ def calculate_combinations(tokens):
 def capture_screenshot(url, output_filename):
     
     try:
-        # Configura il percorso del driver Chrome
+        # ChromeDriver config
         
         path = Path(__file__).parent.resolve()
         chromedriver_path = str(path / "Input/chromedriver")
-
-        # Configura le opzioni del browser
         options = Options()
         options.add_argument('--headless')
 
-        # Inizializza il driver Chrome
+        # ChromeDriver Init
         driver = webdriver.Chrome(executable_path=chromedriver_path, options=options)
 
-        # Carica l'URL fornito
+        # load URL
         if validators.url(url):
     
             driver.get(url)
 
-            # Attendi che la pagina sia completamente caricata (puoi personalizzare questo intervallo)
+            # Sync
             driver.implicitly_wait(5)
 
-            # Cattura lo screenshot e salvalo nel file specificato
+            # Take Screenshot and save it 
             driver.save_screenshot(output_filename)
             print(f"Screenshot di {url} salvato come {output_filename}")
 
-            # Chiudi il driver Chrome
+            # Close Chromedriver
             driver.quit()
         else:
             print(f"Invalid URL: {url}")
@@ -426,6 +399,9 @@ def process_url(url):
 
 
 if __name__ == "__main__":
+
+    
+
     if args.help:
         print("""
         Short Url Scanning Tool trusted by CTI Analysts and Security Researchers
