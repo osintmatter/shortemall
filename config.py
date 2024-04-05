@@ -1,36 +1,44 @@
-import pickle
-import os
-from google_auth_oauthlib.flow import InstalledAppFlow
+#!/usr/bin/env python
+
 import configparser
-import os
-import os.path
-from pathlib import Path
+import pathlib
 
-config = configparser.ConfigParser()
-config.read("config.ini")
-# Specify permissions to send and read/write messages
-# Find more information at:
-# https://developers.google.com/gmail/api/auth/scopes
-SCOPES = ['https://www.googleapis.com/auth/gmail.send',
-          'https://www.googleapis.com/auth/gmail.modify']
+# Ottieni il percorso del file corrente
+path = pathlib.Path(__file__).parent.resolve()
 
+# CREA L'OGGETTO
+config_file = configparser.ConfigParser()
 
-# Get the user's home directory
-home_dir = os.path.expanduser(config.get("path", "home"))
+# AGGIUNGI LA SEZIONE
+config_file.add_section("path")
 
-# Recall that the credentials.json data is saved in our "Home" folder
-json_path = os.path.join(home_dir, 'credentials.json')
+# AGGIUNGI LE IMPOSTAZIONI ALLA SEZIONE
+config_file.set("path", "banner", str(path / "Banner/ascii.txt"))
+config_file.set("path", "dict", str(path / "Input/stable_dict.txt"))
+config_file.set("path", "i_dict", str(path / "Input/dict.txt"))
+config_file.set("path", "infile", str(path / "Output/infile.txt"))
+config_file.set("path", "outfile", str(path / "Output/outfile.txt"))
+config_file.set("path", "tempfile", str(path / "Output/tempfile.txt"))
+config_file.set("path", "screenshot", str(path / "Screenshots/"))
+config_file.set("path", "home", str(path))
+config_file.set("path", "backup", str(path / "Backup/backup_html_table"))
 
-# Next we indicate to the API how we will be generating our credentials
-flow = InstalledAppFlow.from_client_secrets_file(json_path, SCOPES)
+# AGGIUNGI LA SEZIONE DELLE VARIABILI
+config_file.add_section("variables")
+config_file.set("variables", "my_email", "notifications.shortemall@gmail.com")
+config_file.set("variables", "to_email", "notifications.shortemall@gmail.com")
+config_file.set("variables", "api_key", "AIzaSyDGkfQWPy4qFvcSuDxSe9EzSj50zJQs_ik")
 
-# This step will generate the pickle file
-# The file gmail.pickle stores the user's access and refresh tokens, and is
-# created automatically when the authorization flow completes for the first
-# time.
-creds = flow.run_local_server(port=0)
+# SALVA IL FILE DI CONFIGURAZIONE
+config_filename = "config.ini"
+with open(config_filename, "w") as configfileObj:
+    config_file.write(configfileObj)
+    configfileObj.flush()
 
-# We are going to store the credentials in the user's home directory
-pickle_path = os.path.join(home_dir, 'gmail.pickle')
-with open(pickle_path, 'wb') as token:
-    pickle.dump(creds, token)
+print(f"Config file '{config_filename}' created")
+
+# STAMPA IL CONTENUTO DEL FILE
+with open(config_filename, "r") as read_file:
+    content = read_file.read()
+    print(f"\nContent of the config file '{config_filename}' are:\n")
+    print(content)
