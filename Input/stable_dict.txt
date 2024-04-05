@@ -1,1 +1,2 @@
-Edit your stable dictionary: the dictionary is now empty (remove this line before to proceed) 
+# Edit your stable dictionary: if the dictionary is empty, you will receive an error. 
+# Please make sure to modify the file accordingly before proceeding. (Remove this line before continuing)
