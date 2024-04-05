@@ -1,1 +1,1 @@
-Edit you stable dictionary (remove this line before to proceed) 
+Edit your stable dictionary: the dictionary is now empty (remove this line before to proceed) 
