@@ -1,14 +1,10 @@
-google_api_python_client==2.124.0
 google_api_python_client==2.58.0
 google_auth_oauthlib==0.5.2
-lxml==4.9.1
 lxml==4.9.3
-pandas==1.4.0
 pandas==1.5.3
 progressbar33==2.4
 Requests==2.31.0
 selenium==4.0.0a1
 termcolor==1.1.0
-tqdm==4.64.0
 tqdm==4.64.1
 validators==0.20.0
