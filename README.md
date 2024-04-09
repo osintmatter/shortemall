@@ -11,7 +11,6 @@
 ```
 ---
 
-Short'Em All is a URL scanning tool trusted by CTI Analysts and Security Researchers. It's designed to scan short URLs and provide insights into potential security risks or useful information. This tool automates the process of scanning URLs, allowing users to focus on analyzing the results.
 
 ## Table of Contents
 
