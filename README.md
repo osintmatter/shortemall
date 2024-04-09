@@ -15,7 +15,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Features](#New_Features_of_Short'Em_All_v3)
+- [Features](#Main_Features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Options](#options)
@@ -32,7 +32,7 @@ Short'Em All is a Python-based tool that automates the process of scanning URLs.
 - **Auto-Configuration for Improved User Experience:** The tool now offers auto-configuration options to streamline the setup process and ensure optimal performance.
 - **Enhanced Screenshot Management:** Short'Em All now utilizes Chromedriver and Selenium for screenshot capture, reducing user intervention and ensuring greater stability.
 - **Total Code Refactoring:** The codebase has undergone extensive refactoring to improve readability, maintainability, and overall performance
-## Main Features
+## Main_Features
 - **Automated Scanning:** Short'Em All automates the process of scanning URLs, saving time and effort.
 - **Screenshot Capture:** It can capture screenshots of landing pages to provide visual insights.
 - **Notification System:** Users can receive email notifications about scan results.
