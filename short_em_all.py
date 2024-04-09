@@ -407,8 +407,6 @@ if __name__ == "__main__":
 
     if args.help:
         print("""
-        Short Url Scanning Tool trusted by CTI Analysts and Security Researchers
-
         usage: short_em_all.py [-h] [-t TARGET] [-d [DICTIONARY]] [-n [NOTIFICATIONS]] [-z [ZERO]] [-a [ALL]] [-r [SINGLESCAN]] [-e [EMAIL]] [-s [SCREENSHOT]] [-v [VERBOSE]]
         optional arguments:
         -h, --help
