@@ -403,34 +403,6 @@ def process_url(url):
 
 if __name__ == "__main__":
 
-    
-
-    if args.help:
-        print("""
-        usage: short_em_all.py [-h] [-t TARGET] [-d [DICTIONARY]] [-n [NOTIFICATIONS]] [-z [ZERO]] [-a [ALL]] [-r [SINGLESCAN]] [-e [EMAIL]] [-s [SCREENSHOT]] [-v [VERBOSE]]
-        optional arguments:
-        -h, --help
-        show this help message and exit
-        - t, --target
-        insert target keyword for this scan
-        - d, --dictionary
-        use stable_dictionary for this scan
-        -n, --notifications
-        don't send email notifications on found results
-        -z, --zero
-        don't take screenshots on URLs landing pages
-        -f, --found
-        show only found results
-        -r, --singlescan
-        use single scan mode (no retention)
-        -e, --email
-        receive email notification on target scan
-        -s, --screenshot
-        Take screenshots on found results
-        -v, --verbose
-        turn on verbose mode
-        """)
-        exit()
     # Driver's code
     animated_marker()
     warnings.filterwarnings("ignore")
